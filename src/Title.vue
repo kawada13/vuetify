@@ -19,8 +19,8 @@ export default {
       box: '箱'
     }
   },
-  // created() {
-  //   console.log(this.$event);
-  // }
+  created() {
+    console.log(this.value);
+  }
 }
 </script>

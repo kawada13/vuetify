@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import aa from '@/aa'
+import New from '@/New'
+import Validate from '@/Validate'
+import Form from '@/Form'
 
 Vue.use(VueRouter)
 
@@ -10,6 +13,21 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/validate',
+    name: 'Validate',
+    component: Validate
+  },
+  {
+    path: '/form',
+    name: 'Form',
+    component: Form
+  },
+  {
+    path: '/new',
+    name: 'New',
+    component: New
   },
   {
     path: '/aa',
