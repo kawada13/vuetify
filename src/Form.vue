@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <div>
     <input type="text" v-model="newItems">
     <button @click.prevent="addItem">追加</button>
@@ -11,7 +12,29 @@
         <button @click="deleteItem(i)">削除</button>
       </li>
     </ul>
+
+    <hr>
+    <input @input="validate" v-model="numValue" type="number">
+    <v-text-field
+    type="number"
+    v-model="numValue"
+    @input="validate"
+    >
+    </v-text-field> 
+
+
+    <v-row justify="center">
+    <v-date-picker 
+    v-model="picker"
+    :disabled="dis"
+    min="2021-02-01"
+    max="2021-02-28"
+    local="ja"
+    >
+    </v-date-picker>
+  </v-row>
   </div>
+</v-app>
 </template>
 
 <script>
@@ -20,10 +43,18 @@ export default {
     return {
       newItems:'',
       todos: [], 
-      query: ''
+      query: '',
+      numValue: '',
+      picker: '2021-02-05',
+      dis: false
+      
     }
   },
   methods: {
+    validate(v) { 
+      console.log(v);
+      this.numValue = this.numValue.replace(/\D/g, '')
+    }, 
     addItem() {
       if(!this.newItems) return
       const todo = {
