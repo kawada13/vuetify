@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import aa from '@/aa'
+import cc from '@/views/cc'
 import New from '@/New'
 import Validate from '@/Validate'
 import Form from '@/Form'
@@ -33,6 +34,11 @@ const routes = [
     path: '/aa',
     name: 'aa',
     component: aa
+  },
+  {
+    path: '/cc',
+    name: 'cc',
+    component: cc
   },
   {
     path: '/enterprise',
