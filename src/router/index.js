@@ -6,6 +6,7 @@ import cc from '@/views/cc'
 import New from '@/New'
 import Validate from '@/Validate'
 import Form from '@/Form'
+import Dog from '@/Dog'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ const routes = [
     path: '/form',
     name: 'Form',
     component: Form
+  },
+  {
+    path: '/dog',
+    name: 'Dog',
+    component: Dog
   },
   {
     path: '/new',
