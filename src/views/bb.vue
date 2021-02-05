@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" v-model="childParam">
+    <!-- <input type="text" v-model="childParam">
     <div>
       <slot name="header">header</slot>
       <slot>名前なし</slot>
@@ -9,7 +9,15 @@
       <slot :member="member" name="member">ここがさしかわる</slot><br>
       <slot :member="member" name="member">っっっs</slot><br>
 
-    </div>
+    </div> -->
+
+
+    <!-- <button @click="on">Click</button> -->
+    <slot name="activator" :on="on"></slot>
+    <slot v-if="display">
+      何も書いてないならこれが表示される
+    </slot>
+
   </div>
 </template>
 
@@ -23,7 +31,8 @@ export default {
         name: '東堂',
         age: 22,
         hobby: 'サッカー'
-      }
+      },
+      display: true
     }
   },
   computed: {
@@ -35,6 +44,11 @@ export default {
         this.childValue = val
         this.$emit('child-event', val)
       }
+    }
+  },
+  methods: {
+    on() {
+      this.display = !this.display
     }
   }
 }
