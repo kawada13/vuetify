@@ -20,9 +20,7 @@
     v-model="numValue"
     @input="validate"
     >
-    </v-text-field> 
-    
-
+    </v-text-field>
 
     <v-row justify="center">
     <v-date-picker 
