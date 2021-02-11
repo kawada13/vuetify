@@ -1,6 +1,25 @@
 <template>
 <div>
-<router-view />
+<v-app>
+  <v-container>
+  <v-btn
+    depressed
+    color="primary"
+    @click="goToHome"
+    class="mr-2"
+  >
+    Homeへ行く
+  </v-btn>
+  <v-btn
+    depressed
+    color="primary"
+    @click="goToAbout"
+  >
+    Aboutへ行く
+  </v-btn>
+  <router-view />
+  </v-container>
+</v-app>
 
 </div>
 </template>
@@ -69,6 +88,14 @@ export default {
       ]
     }
   },
+  methods: {
+    goToAbout() {
+      this.$router.push('/about')
+    },
+    goToHome() {
+      this.$router.push('/')
+    },
+  }
 
 };
 </script>
