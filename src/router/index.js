@@ -55,8 +55,13 @@ const routes = [
   },
   {
     path: '/book/:id',
-    name: 'BookList',
-    component: BookDetail
+    name: 'Book',
+    component: BookDetail,
+    props: route => ({ 
+      id: Number(route.params.id),
+      title: route.params.title,
+      content: route.params.content
+     })
   },
   {
     path: '/enterprise',
