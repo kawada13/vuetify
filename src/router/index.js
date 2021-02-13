@@ -7,6 +7,8 @@ import New from '@/New'
 import Validate from '@/Validate'
 import Form from '@/Form'
 import Dog from '@/Dog'
+import BookList from '@/views/BookList.vue'
+import BookDetail from '@/components/BookDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -47,6 +49,16 @@ const routes = [
     component: cc
   },
   {
+    path: '/book',
+    name: 'BookList',
+    component: BookList
+  },
+  {
+    path: '/book/:id',
+    name: 'BookList',
+    component: BookDetail
+  },
+  {
     path: '/enterprise',
     name: 'enterprise',
     component: () => import('../views/Enterprise.vue')
@@ -54,9 +66,6 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]

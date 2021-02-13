@@ -3,19 +3,28 @@
 <v-app>
   <v-container>
   <v-btn
+    dense
     depressed
     color="primary"
     @click="goToHome"
     class="mr-2"
   >
-    Homeへ行く
+    Home
   </v-btn>
   <v-btn
     depressed
     color="primary"
     @click="goToAbout"
+    class="mr-2"
   >
-    Aboutへ行く
+    About
+  </v-btn>
+  <v-btn
+    depressed
+    color="primary"
+    @click="goToBook"
+  >
+    Book
   </v-btn>
   <router-view />
   </v-container>
@@ -94,6 +103,9 @@ export default {
     },
     goToHome() {
       this.$router.push('/')
+    },
+    goToBook() {
+      this.$router.push('/book')
     },
   }
 
